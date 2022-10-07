@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '12.0'
+
+target 'YFNetwork_Example' do
+  pod 'YFNetwork', :path => '../'
+  pod 'YFNetwork/ResponseCache', :path => '../'
+
+  pod 'Kingfisher'
+  pod 'Cache'
+  
+end
