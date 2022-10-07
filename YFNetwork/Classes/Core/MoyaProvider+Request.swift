@@ -26,7 +26,7 @@ public extension MoyaProvider {
             case let .success(response):
                 do {
                     let mapedResponse = try response.map(T.self)
-                    if let verifyResponse = mapedResponse as? ResponseVerifiable, verifyResponse.isValid {
+                    if let verifyResponse = mapedResponse as? ResponseVerifiable, !verifyResponse.isValid {
                         completionHandler?(.failure(.verifyError(code: verifyResponse.code, message: verifyResponse.message)))
                     } else {
                         completionHandler?(.success(mapedResponse))
